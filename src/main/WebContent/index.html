@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="resources/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/flatui/dist/css/flat-ui.css" rel="stylesheet">
-    <link rel="shortcut icon" href="resources/flatui/dist/img/favicon.ico">
-    <script src="resources/flatui/dist/js/vendor/html5shiv.js"></script>
-    <script src="resources/flatui/dist/js/vendor/respond.min.js"></script>
+    <!--<link href="resources/flatui/dist/css/flat-ui.css" rel="stylesheet">-->
+    <link rel="stylesheet" href=resources/metisMenu/dist/metisMenu.css>
+    <link rel="stylesheet" href=resources/font-awesome-3.2.1/css/font-awesome.css>
+    <!--<link rel="shortcut icon" href="resources/flatui/dist/img/favicon.ico">-->
+    <!--<script src="resources/flatui/dist/js/vendor/html5shiv.js"></script>-->
+    <!--<script src="resources/flatui/dist/js/vendor/respond.min.js"></script>-->
 </head>
 <body>
 
@@ -18,11 +20,69 @@
         min-height: 2000px;
         padding-top: 70px;
     }
+    .sidebar {
+        display: block;
+        float: left;
+        width: 250px;
+        background: #333;
+    }
+    .content {
+        display: block;
+        overflow: hidden;
+        width: auto;
+    }
+    .sidebar-nav {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        /*background-image: -webkit-linear-gradient(left, color-stop(#333333 10px), color-stop(#222222 10px));*/
+        background: linear-gradient(to right, #333333 10px, #222222 10px) repeat-x;
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ff333333', endColorstr='#ff222222', GradientType=1);
+    }
+    .sidebar-nav ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .sidebar-nav a, .sidebar-nav a:hover, .sidebar-nav a:focus, .sidebar-nav a:active {
+        outline: none;
+    }
+    .sidebar-nav ul li, .sidebar-nav ul a {
+        display: block;
+    }
+    .sidebar-nav ul a {
+        padding: 10px 20px;
+        color: #aaa;
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.05) inset;
+        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+    }
+    .sidebar-nav ul a:hover, .sidebar-nav ul a:focus, .sidebar-nav ul a:active {
+        color: #fff;
+        text-decoration: none;
+    }
+    .sidebar-nav ul ul a {
+        padding: 10px 30px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    .sidebar-nav ul ul a:hover, .sidebar-nav ul ul a:focus, .sidebar-nav ul ul a:active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .sidebar-nav-item {
+        padding-left: 5px;
+    }
+    .sidebar-nav-item-icon {
+        padding-right: 5px;
+    }
+    #rtlh3 small {
+        transform: rotateY(180deg);
+        display: inline-block;
+    }
 </style>
 
 <!-- Static navbar -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
+
+
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -99,39 +159,33 @@
     </div>
 </div>
 
-
-<div class="container">
-
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It
-            includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-
-        <p>
-            <a class="btn btn-lg btn-primary" href="#" role="button">View navbar docs &raquo;</a>
-        </p>
-    </div>
-
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title">面板标题</h3>
-        </div>
-        <div class="panel-body">
-            <iframe src="http://www.baidu.com"></iframe>
-        </div>
-    </div>
-
-</div>
-<!-- /container -->
+<ul class="metismenu" id="menu">
+    <li class="active">
+        <a href="#" aria-expanded="true">Menu 1</a>
+        <ul aria-expanded="true">
+            ...
+        </ul>
+    </li>
+    <li>
+        <a href="#" aria-expanded="false">Menu 2</a>
+        <ul aria-expanded="false">
+            ...
+        </ul>
+    </li>
+</ul>
 
 
-<script src="resources/flatui/dist/js/vendor/jquery.min.js"></script>
-<script src="resources/flatui/dist/js/flat-ui.min.js"></script>
-<script src="resources/flatui/assets/js/application.js"></script>
 
+
+<script src="resources/jquery/jquery.min-2.1.4.js"></script>
+<!--<script src="resources/flatui/dist/js/flat-ui.min.js"></script>-->
+<!--<script src="resources/flatui/assets/js/application.js"></script>-->
+<script src="resources/metisMenu/dist/metisMenu.js"></script>
+<script>
+    $(function(){
+        console.log($("#menu").length);
+        $("#menu").metisMenu();
+    })
+</script>
 </body>
 </html>
