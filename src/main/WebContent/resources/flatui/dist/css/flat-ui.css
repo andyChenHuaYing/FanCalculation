@@ -474,7 +474,7 @@ body {
 }
 
 a {
-    color: #16a085;
+    color: #34495e;
     text-decoration: none;
     -webkit-transition: .25s;
     transition: .25s;
@@ -5103,7 +5103,7 @@ select[multiple].navbar-form .select2-search input[type="text"] {
 
 .navbar-nav > li > .dropdown-menu {
     min-width: 100%;
-    margin-top: 9px;
+    margin-top: 2px;
     border-radius: 4px;
 }
 
