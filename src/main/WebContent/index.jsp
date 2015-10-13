@@ -185,7 +185,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div id="page-wrapper">
+    <div id="page-wrapper" style="min-height: 768px">
         <div class="row">
             <div class="col-lg-12">
                 <ol class="breadcrumb breadcrumb-custom">
@@ -194,6 +194,7 @@
                     <li class="active">十一月</li>
                 </ol>
             </div>
+            <hr/>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
