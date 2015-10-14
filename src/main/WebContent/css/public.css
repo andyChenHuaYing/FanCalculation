@@ -357,3 +357,7 @@ table.dataTable thead .sorting:after {
     padding: 10px;
     border-bottom: 1px solid #e7e7e7;
 }
+
+.center-align {
+    text-align: center;
+}

@@ -3,8 +3,9 @@
 <html lang="zh_CN">
 <head>
     <meta charset="utf-8">
-    <title>Flat UI Free</title>
+    <title>Fan calculation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% String path = request.getContextPath(); %>
     <%@include file="config/StyleInclude" %>
 </head>
 <body>
@@ -16,39 +17,35 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
             </button>
-            <a class="navbar-brand" href="#">Fan Calculation</a>
+            <a class="navbar-brand" href="#">Just For Fan</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fan 录入 <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fan 桶记 <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"> <span class="glyphicon glyphicon-pencil"></span>基础消费录入 </a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>均摊消费录入</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> 信息录入</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> 信息查询</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> 信息统计</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> 日志查询</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fan 查询 <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fan 预留A <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">基础消费查询</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Function one</a></li>
+                        <li><a href="#">Function two</a></li>
+                        <li><a href="#">Function three</a></li>
+                        <li><a href="#">Function four</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fan 统计 <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fan 预留B <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Function one</a></li>
+                        <li><a href="#">Function two</a></li>
+                        <li><a href="#">Function three</a></li>
+                        <li><a href="#">Function four</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -57,8 +54,6 @@
                         <li><a href="#">权限管理</a></li>
                         <li><a href="#">权限组管理</a></li>
                         <li><a href="#">角色管理</a></li>
-                        <!--  <li class="divider"></li>
-                          <li class="dropdown-header">Nav header</li>-->
                         <li><a href="#">角色组管理</a></li>
                         <li><a href="#">用户管理</a></li>
                         <li><a href="#">系统日志</a></li>
@@ -196,97 +191,13 @@
                     </ol>
                 </div>
             </div>
-            <div id="container" style="text-align: center">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>消费信息录入</h4>
-
-                        <form class="form-horizontal" role="form">
-                            <!--商品类型-->
-                            <div class="form-group">
-                                <label for="commodityType" class="col-lg-2 control-label">商品类型：</label>
-
-                                <div class="col-lg-8">
-                                    <select id="commodityType" data-toggle="select"
-                                            class="form-control select select-default">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group" id="commodityTypeContainer">
-                                <label for="commodityName" class="col-lg-2 control-label">商品名称：</label>
-
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="commodityName"
-                                           placeholder="Please input commodity name...">
-                                </div>
-                            </div>
-
-                            <div class="form-group" id="commodityPriceContainer">
-                                <label for="commodityPrice" class="col-lg-2 control-label">商品价格：</label>
-
-                                <div class="col-lg-8">
-                                    <div class="input-group">
-                                        <input type="number" class="form-control" id="commodityPrice"
-                                               placeholder="Please input commodity price...">
-                                        <span class="input-group-addon">￥</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="consumptionData" class="col-lg-2 control-label">购买日期：</label>
-
-                                <div class="col-lg-8">
-                                    <input type="date" class="form-control" id="consumptionData"
-                                           placeholder="Please select consumption data...">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="consumer" class="col-lg-2 control-label">付费人员：</label>
-
-                                <div class="col-lg-8">
-                                    <select data-toggle="select" id="consumer" multiple
-                                            class="form-control multiselect multiselect-default mrs mbm">
-                                        <option value="0" selected>华仔</option>
-                                        <option value="1">心心</option>
-                                        <option value="2" selected>二狗</option>
-                                        <option value="3">小明</option>
-                                        <option value="5">长城</option>
-                                        <option value="6">晓庆</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="note" class="col-lg-2 control-label">备注信息：</label>
-
-                                <div class="col-lg-8">
-                                    <textarea class="form-control" id="note"
-                                              placeholder="Has any words to note ?"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-lg-offset-2 col-lg-8">
-                                    <button class="btn btn-wide btn-primary mrm">保存</button>
-                                    <button type="reset" class="btn btn-wide btn-default">重置</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- /.col-md-12 -->
-                </div>
+            <div id="container" class="center-align">
             </div>
         </div>
         <!-- /.row -->
     </div>
 </div>
 <%@include file="config/JSInclude" %>
+<script src="js/index.js"></script>
 </body>
 </html>
