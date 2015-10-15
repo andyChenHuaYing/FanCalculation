@@ -8,7 +8,7 @@
  */
 $(function() {
 
-    $('#side-menu').metisMenu();
+    $('#sideMenu').metisMenu();
 
 });
 

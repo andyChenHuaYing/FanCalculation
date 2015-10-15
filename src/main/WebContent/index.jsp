@@ -20,7 +20,7 @@
             <a class="navbar-brand" href="#">Just For Fan</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" id="headerNavigator">
                 <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fan 桶记 <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -84,7 +84,7 @@
         <!--/.nav-collapse -->
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
+                <ul class="nav" id="sideMenu">
                     <li>
                         <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
