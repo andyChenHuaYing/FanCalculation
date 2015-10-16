@@ -3,12 +3,13 @@
  */
 (function ($) {
     //加载导航栏、默认触发第一个导航选项的单击事件、并且其出于激活状态
-    $.post({
-        url:$cntPath + "/load/loadNavigatorBar",
+    $.ajax({
+        type:"POST",
+        url:$cntPath + "load/loadNavigatorBar",
         async:false,
+        dataType:"json",
         success:function(data) {
-            var navigatorBarData = eval("(" + data + ")");
-            initNavigatorBar(navigatorBarData);
+            initNavigatorBar(data);
         },
         error:function(data){
             console.log(data);

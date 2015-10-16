@@ -30,7 +30,7 @@
           class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dataSource"
           p:configLocation="classpath:mybatis/mybatis-config.xml"
-          p:mapperLocations="classpath:mybatis/mapper/UserMapper.xml"/>
+          p:mapperLocations="classpath:mybatis/mapper/*Mapper.xml"/>
     <!-- configLocation为mybatis属性 mapperLocations为所有mapper-->
 
     <!-- spring与mybatis整合配置，扫描所有dao-->

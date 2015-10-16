@@ -13,5 +13,5 @@
 $cntPath = (function () {
     var path = document.location.pathname;
     var index = path.substr(1).indexOf("/");
-    return path.substr(0, index + 1);
+    return path.substr(0, index + 1) + "/";
 })();

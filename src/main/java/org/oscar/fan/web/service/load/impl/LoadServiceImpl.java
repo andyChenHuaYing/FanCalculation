@@ -20,7 +20,7 @@ public class LoadServiceImpl implements LoadService {
     private ILoadDAO loadDAO;
 
     @Override
-    public List<Map<String, Object>> loadNavigatorBar(String userCode) throws SQLException {
-        return loadDAO.loadNavigatorBar(userCode);
+    public List<Map<String, Object>> loadNavigatorBar(int userId) throws SQLException {
+        return loadDAO.loadNavigatorBar(userId);
     }
 }

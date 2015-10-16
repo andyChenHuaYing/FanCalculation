@@ -1,10 +1,12 @@
 package org.oscar.fan.web.controller.load;
 
+import net.sf.json.JSONArray;
 import org.oscar.fan.web.service.load.LoadService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,6 +29,8 @@ public class LoadController {
     @Qualifier("loadServiceImpl")
     private LoadService loadService;
 
+    @Autowired
+    private ApplicationContext applicationContext;
 
     @RequestMapping("/consumptionInfoInput")
     public String consumptionInfoInput() {
@@ -38,14 +42,13 @@ public class LoadController {
     public String loadNavigatorBar() {
         List<Map<String, Object>> list = null;
         try {
-            list = this.loadService.loadNavigatorBar("");
+            list = this.loadService.loadNavigatorBar(1000000001);
         } catch (SQLException e) {
             logger.error("Load navigator bar info fail, the error message is {}", e.getMessage());
             e.printStackTrace();
         }
-       /* JSONArray jsonObject = JSONArray.fromObject(list);
-        return jsonObject.toString();*/
-        return null;
+        JSONArray jsonObject = JSONArray.fromObject(list);
+        return jsonObject.toString();
     }
 
 }

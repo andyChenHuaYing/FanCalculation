@@ -9,5 +9,5 @@ import java.util.Map;
  * Version 1.0-SNAPSHOT<br>
  */
 public interface LoadService {
-    List<Map<String, Object>> loadNavigatorBar(String userCode) throws SQLException;
+    List<Map<String, Object>> loadNavigatorBar(int userId) throws SQLException;
 }

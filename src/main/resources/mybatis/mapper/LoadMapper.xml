@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.oscar.fan.web.dao.load.ILoadDAO">
+
+    <select id="loadNavigatorBar" resultType="java.util.TreeMap" parameterType="int">
+        select t8.id, t8.url, t8.name, t8.parent_menu_id, t8.icon_class, t8.top_menu_id
+        from t_base_menu t8
+        where t8.id in
+              (select t9.menu_id
+               from t_base_privilege_menu t9
+               where t9.privilege_id in
+                     (select t4.privilege_id
+                      from t_base_privilege_role t4
+                      where t4.role_id in
+                            (select t1.role_id
+                             from t_base_user_role t1
+                             where t1.user_id = '1000000001'
+                             union
+                             select t3.role_id
+                             from t_base_rolegroup_role t3
+                             where t3.rolegrp_id in
+                                   (select t2.rolegrp_id
+                                    from t_base_user_rolegroup t2
+                                    where t2.user_id = '1000000001'))
+                      union
+                      select privilege_id
+                      from (select t6.privilege_id
+                            from t_base_privilegegrp_priv t6
+                            where t6.privilegegroup_id in
+                                  (select t7.privilegegrp_id
+                                   from t_base_privilegegrp_role t7
+                                   where t7.role_id in
+                                         (select t1.role_id
+                                          from t_base_user_role t1
+                                          where t1.user_id = '1000000001'
+                                          union
+                                          select t3.role_id
+                                          from t_base_rolegroup_role t3
+                                          where t3.rolegrp_id in
+                                                (select t2.rolegrp_id
+                                                 from t_base_user_rolegroup t2
+                                                 where t2.user_id = '1000000001'))))))
+              and t8.parent_menu_id = -1 order by t8.order_index
+    </select>
+
+</mapper>

@@ -10,5 +10,5 @@ import java.util.Map;
  */
 public interface ILoadDAO {
 
-    List<Map<String,Object>> loadNavigatorBar(String userCode) throws SQLException;
+    List<Map<String,Object>> loadNavigatorBar(int userCode) throws SQLException;
 }
